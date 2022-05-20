@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class=""><!--<![endif]-->
-<head>
-	<meta charset="utf-8">
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} 404 {% endblock %}
+{% block content %}
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-	<title>Maxshop - Shop Single</title>
-
-	<!-- Standard Favicon -->
-	<link rel="icon" type="image/x-icon" href="images//favicon.ico" />
-	
-	<!-- For iPhone 4 Retina display: -->
-	<link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-114x114-precomposed.png">
-	
-	<!-- For iPad: -->
-	<link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-72x72-precomposed.png">
-	
-	<!-- For iPhone: -->
-	<link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-57x57-precomposed.png">	
-	
-	<!-- Library - Google Font Familys -->
-	<link href="https://fonts.googleapis.com/css?family=Arizonia|Crimson+Text:400,400i,600,600i,700,700i|Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-	
-	<link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
- 
-	<!-- RS5.0 Layers and Navigation Styles -->
-	<link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
-	
-	<!-- Library - Bootstrap v3.3.5 -->
-    <link rel="stylesheet" type="text/css" href="libraries/lib.css">
-	
-	<!-- Custom - Common CSS -->
-	<link rel="stylesheet" type="text/css" href="css/plugins.css">			
-	<link rel="stylesheet" type="text/css" href="css/navigation-menu.css">
-	<link rel="stylesheet" type="text/css" href="css/shortcode.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	
-	
-	<!--[if lt IE 9]>
-		<script src="js/html5/respond.min.js"></script>
-    <![endif]-->
-	
-</head>
-
-<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
 	<div class="main-container">
 		<!-- Loader -->
 		<div id="site-loader" class="load-complete">
@@ -128,14 +78,14 @@
 									<li class="mini_cart_item">
 										<a title="Remove this item" class="remove" href="#">&#215;</a>
 										<a href="#" class="shop-thumbnail">
-											<img alt="poster_2_up" class="attachment-shop_thumbnail" src="images/product-wishlist-1.jpg">Flying Ninja
+											<img alt="poster_2_up" class="attachment-shop_thumbnail" src="{% static 'images/product-wishlist-1.jpg' %}">Flying Ninja
 										</a>
 										<span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
 									</li>
 									<li class="mini_cart_item">
 										<a title="Remove this item" class="remove" href="#">&#215;</a>
 										<a href="#" class="shop-thumbnail">
-											<img alt="poster_2_up" class="attachment-shop_thumbnail" src="images/product-wishlist-2.jpg">Flying Ninja
+											<img alt="poster_2_up" class="attachment-shop_thumbnail" src="{% static 'images/product-wishlist-2.jpg' %}">Flying Ninja
 										</a>
 										<span class="quantity">2 &#215; <span class="amount">Rs.12.00</span></span>
 									</li>
@@ -234,15 +184,15 @@
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<div class="carousel-item">
 								<div class="item">
-									<img src="images/product.jpg" alt="product" />
+									<img src="{% static 'images/product.jpg' %}" alt="product" />
 								</div>
 								
 								<div class="item">
-									<img src="images/product.jpg" alt="product" />
+									<img src="{% static 'images/product.jpg' %}" alt="product" />
 								</div>
 								
 								<div class="item">
-									<img src="images/product.jpg" alt="product" />
+									<img src="{% static 'images/product.jpg' %}" alt="product" />
 								</div>
 							</div>
 						</div>
@@ -317,14 +267,14 @@
 						<div class="section-header">
 							<h3>Related Products</h3>
 							<p>our vision is to be Earth's most customer centric company</p>
-							<img src="images/section-seprator.png" alt="section-seprator" />
+							<img src="{% static 'images/section-seprator.png' %}" alt="section-seprator" />
 						</div><!-- Section Header /- -->
 						<!-- Products -->
 						<ul class="products">
 							<!-- Product -->
 							<li class="product">
 								<a href="#">
-									<img src="images/product-1.jpg" alt="Product" />
+									<img src="{% static 'images/product-1.jpg' %}" alt="Product" />
 									<h5>Stylish Chair</h5>
 									<span class="price"><del>$200</del>$139</span>
 								</a>
@@ -339,7 +289,7 @@
 							<!-- Product -->
 							<li class="product">
 								<a href="#">
-									<img src="images/product-2.jpg" alt="Product" />
+									<img src="{% static 'images/product-2.jpg' %}" alt="Product" />
 									<h5>men's casual shoes</h5>
 									<span class="price"><del>$150</del>$85</span>
 								</a>
@@ -354,7 +304,7 @@
 							<!-- Product -->
 							<li class="product">
 								<a href="#">
-									<img src="images/product-3.jpg" alt="Product" />
+									<img src="{% static 'images/product-3.jpg' %}" alt="Product" />
 									<h5>Sun glass</h5>
 									<span class="price"><del>$100</del>$35</span>
 								</a>
@@ -369,7 +319,7 @@
 							<!-- Product -->
 							<li class="product">
 								<a href="#">
-									<img src="images/product-4.jpg" alt="Product" />
+									<img src="{% static 'images/product-4.jpg' %}" alt="Product" />
 									<h5>tourist bags</h5>
 									<span class="price"><del>$350</del>$279</span>
 								</a>
@@ -393,113 +343,8 @@
 				</div><!-- Container /- -->
 			</div><!-- Shop Single /- -->
 		</main>
-		
-		<!-- Footer Main 1 -->
-		<footer id="footer-main" class="footer-main footer-main-1 services-section container-fluid">
-			<!-- Container -->
-			<div class="container">
-				<div class="services-item">
-					<div class="col-md-4 col-sm-6 col-xs-6">
-						<div class="srv-box">
-							<i class="icon icon-Truck"></i><h5>Free delivery</h5><i class="icon icon-Dollar"></i>
-							<span class="icon_close"></span>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-6">
-						<div class="srv-box">
-							<i class="icon icon-Goto"></i><h5>Money Back</h5><i class="icon icon-Dollars"></i>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-6">
-						<div class="srv-box">
-							<i class="icon icon-Headset"></i><h5>24/7 support</h5><i class="icon icon-Timer"></i>
-						</div>
-					</div>
-				</div>
-				<!-- Widget About -->
-				<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget widget_about">
-					<a href="index.html" title="Max Shop">Max <span>Shop</span></a>
-					<p>On the most sensational inspirational celbrational Muppetational... This is what we call Show. I have always wanted to have a neighbor just like you.</p>
-					<ul class="social">
-						<li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#" title="Tumblr"><i class="fa fa-tumblr"></i></a></li>
-						<li><a href="#" title="Vimeo"><i class="fa fa-vimeo"></i></a></li>
-					</ul>
-				</aside><!-- Widget About /- -->
-				<!-- Widget Links -->
-				<aside class="col-md-2 col-sm-6 col-xs-6 ftr-widget widget_links">
-					<h3 class="widget-title">Popular Links</h3>
-					<ul>
-						<li><a href="index.html#product-section" title="Popular Products">Popular Products</a></li>
-						<li><a href="index.html#selling" title="Best Selling">Best Selling</a></li>
-						<li><a href="about.html" title="About Us">About Us</a></li>
-						<li><a href="index.html#dealing" title="Deal Of The Day">Deal Of The Day</a></li>
-						<li><a href="index.html#collection" title="Product Collections">Product Collections</a></li>
-						<li><a href="contact-us.html" title="Contact Us">Contact Us</a></li>
-					</ul>
-				</aside><!-- Widget Links /- -->
-				<!-- Widget Account -->
-				<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget widget_links widget_account">
-					<h3 class="widget-title">my account</h3>
-					<ul>
-						<li><a href="#" title="My Order Details">My Order Details</a></li>
-						<li><a href="#" title="My credit Offers">My credit Offers</a></li>
-						<li><a href="#" title="My addresses">My addresses</a></li>
-						<li><a href="#" title="My Personal Details">My Personal Details</a></li>
-						<li><a href="#" title="My Account Details">My Account Details</a></li>
-					</ul>
-				</aside><!-- Widget Account /- -->
-				<!-- Widget Gallery -->
-				<aside class="col-md-4 col-sm-6 col-xs-6 ftr-widget widget_gallery">
-					<h3 class="widget-title">collections</h3>
-					<ul>
-						<li><a href="#" title=""><img src="images/ftr-latestpost-1.jpg" alt="ftr-latestpost"></a></li>
-						<li><a href="#" title=""><img src="images/ftr-latestpost-2.jpg" alt="ftr-latestpost"></a></li>
-						<li><a href="#" title=""><img src="images/ftr-latestpost-3.jpg" alt="ftr-latestpost"></a></li>
-						<li><a href="#" title=""><img src="images/ftr-latestpost-4.jpg" alt="ftr-latestpost"></a></li>
-						<li><a href="#" title=""><img src="images/ftr-latestpost-5.jpg" alt="ftr-latestpost"></a></li>
-						<li><a href="#" title=""><img src="images/ftr-latestpost-6.jpg" alt="ftr-latestpost"></a></li>
-					</ul>
-				</aside><!-- Widget Gallery -->
-				<div class="copyright-section">
-					<div class="coyright-content">
-						<p>&copy; Max shop. all rights reserved</p>
-					</div>	
-					<ul>
-						<li><a href="#" title="Delivery Information">Delivery Information</a></li>
-						<li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
-						<li><a href="#" title="Terms & Condition">Terms & Condition</a></li>
-					</ul>
-				</div>
-			</div><!-- Container /- -->
-		</footer><!-- Footer Main 1 -->
 
 	</div>
-	
-	<!-- JQuery v1.12.4 -->
-	<script src="js/jquery.min.js"></script>
 
-	<!-- Library - Js -->
-	<script src="libraries/lib.js"></script>
-	
-	<script src="libraries/jquery.countdown.min.js"></script>
-	
-	<!-- RS5.0 Core JS Files -->
-	<script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
-	<script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-	<script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-	
-	<!-- Library - Google Map API -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDW40y4kdsjsz714OVTvrw7woVCpD8EbLE"></script>
 
-	<!-- Library - Theme JS -->
-	<script src="js/functions.js"></script>
-	
-</body>
-</html>
-	
+{% endblock %}
