@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop_app'
+    'shop_app',
+    'dashboard'
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+PAGINATE_BY = 3
+
+API_URL = 'http://127.0.0.1:8000/api/v1/'

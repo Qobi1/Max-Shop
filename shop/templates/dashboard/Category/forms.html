@@ -1,0 +1,10 @@
+{% extends 'dashboard/index' %}
+{% block content %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf token %}
+    {{ form.as_p }}
+    <a href="#"><button type="submit" class="btn">Save</button></a>
+    <a href="#"><button type="button" class="btn">Back</button></a>
+</form>
+
+{% endblock %}
