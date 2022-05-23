@@ -119,36 +119,36 @@
 							<a href="#" title="Home" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
 							<i class="ddl-switch fa fa-angle-down"></i>
 							<ul class="dropdown-menu">
-								<li><a href="index.html" title="home 1">home 1</a></li>
-								<li><a href="index2.html" title="home 2">home 2</a></li>
+								<li><a href="{% url 'home' %}" title="home 1">home 1</a></li>
+								<li><a href="{% url 'index2' %}" title="home 2">home 2</a></li>
 							</ul>
 						</li>
 						<li class="active dropdown">
 							<a href="#" title="Home" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Categories </a>
 							<i class="ddl-switch fa fa-angle-down"></i>
 							<ul class="dropdown-menu">
-								<li><a href="cart.html" title="Cart">Cart</a></li>
-								<li><a href="checkout.html" title="Checkout">Checkout</a></li>
-								<li><a href="404.html" title="404">404</a></li>
+								<li><a href="{% url 'cart' %}" title="Cart">Cart</a></li>
+								<li><a href="{% url 'checkout' %}" title="Checkout">Checkout</a></li>
+								<li><a href="{% url 'error' %}" title="404">404</a></li>
 							</ul>
 						</li>
 						<li><a href="index.html#product-section" title="Products">Products</a></li>
 						<li class="dropdown">
-							<a href="shop.html" title="Shop" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
+							<a href="{% url 'shop' %}" title="Shop" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
 							<i class="ddl-switch fa fa-angle-down"></i>
 							<ul class="dropdown-menu">
-								<li><a href="shop-single.html" title="Shop Single">Shop Single</a></li>
+								<li><a href="{% url 'shop_single' %}" title="Shop Single">Shop Single</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="blog.html" title="Blog" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+							<a href="{% url 'blog' %}" title="Blog" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
 							<i class="ddl-switch fa fa-angle-down"></i>
 							<ul class="dropdown-menu">
-								<li><a href="blog-post.html" title="Blog Post">Blog Post</a></li>
+								<li><a href="{% url 'blog_post' %}" title="Blog Post">Blog Post</a></li>
 							</ul>
 						</li>
-						<li><a href="about.html" title="About Us">About Us</a></li>
-						<li><a href="contact-us.html" title="Contact Us">Contact Us</a></li>
+						<li><a href="{% url 'about' %}" title="About Us">About Us</a></li>
+						<li><a href="{% url 'contact' %}" title="Contact Us">Contact Us</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</nav><!-- nav /- -->
