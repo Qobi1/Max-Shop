@@ -70,7 +70,7 @@ def get_list(requests):
 
 
 def get_one(requests, pk=None):
-    sql = "SELECT * from app1_category where id=%s"
+    sql = "SELECT * from shop_app_category where id=%s"
     with closing(connection.cursor()) as cursor:
         cursor.execute(sql, [pk])
         result = dictfetchone(cursor)

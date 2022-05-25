@@ -41,7 +41,9 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    content = models.CharField(max_length=256)
     ctg = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField()
     availibility = models.CharField(max_length=56, choices=availibility())
     rate = models.CharField(max_length=56, choices=rate())
     short_info = models.TextField()
@@ -50,5 +52,5 @@ class Product(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.ctg
+        return self.content
 
