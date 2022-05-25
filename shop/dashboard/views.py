@@ -4,5 +4,6 @@ from django.shortcuts import render
 
 
 def home(requests):
-    return render(requests, 'dashboard/index.html')
+    ctx = {}
+    return render(requests, 'dashboard/index.html', ctx)
 

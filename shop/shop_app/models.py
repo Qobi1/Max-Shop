@@ -33,7 +33,11 @@ class Category(models.Model):
     image = models.ImageField()
     content = models.CharField(max_length=100)
     price_symbol = models.CharField(max_length=56, choices=price())
-    price = models.IntegerField()
+    real_price = models.IntegerField()
+    discount_price = models.IntegerField()
+
+    def __str__(self):
+        return self.content
 
 
 class Product(models.Model):
@@ -45,4 +49,6 @@ class Product(models.Model):
     size = models.CharField
     description = models.TextField()
 
+    def __str__(self):
+        return self.ctg
 
