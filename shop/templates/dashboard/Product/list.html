@@ -4,7 +4,7 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Table with Links</h4>
+            <h4 class="card-title">Product Table</h4>
             <p class="category">Here is a subtitle for this table</p>
         </div>
         <div class="card-content table-responsive table-full-width">
@@ -13,19 +13,20 @@
                     <tr>
                         <th class="text-center">#</th>
                         <th>Name</th>
-                        <th>Job Position</th>
-                        <th class="text-right">Salary</th>
+                        <th>Category</th>
+                        <th class="text-right">Rate</th>
                         <th class="text-right">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for i in product %}
                     <tr>
-                        <td class="text-center">1</td>
-                        <td>Andrew Mike</td>
-                        <td>Develop</td>
-                        <td class="text-right">&euro; 99,225</td>
+                        <td class="text-center">{{ forloop.counter }}</td>
+                        <td>{{ i.content }}</td>
+                        <td>{{ i.ctg_content }}</td>
+                        <td class="text-right">{{ i.rate }}</td>
                         <td class="td-actions text-right">
-                            <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                            <a href="{% url 'dashboard_product_detail' pk=i.id %}" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
                                 <i class="ti-user"></i>
                             </a>
                             <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
@@ -36,77 +37,22 @@
                             </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="text-center">2</td>
-                        <td>John Doe</td>
-                        <td>Design</td>
-                        <td class="text-right">&euro; 89,241</td>
-                        <td class="td-actions text-right">
-                            <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                <i class="ti-user"></i>
-                            </a>
-                            <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
-                                <i class="ti-pencil-alt"></i>
-                            </a>
-                            <a href="#" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                <i class="ti-close"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">3</td>
-                        <td>Alex Mike</td>
-                        <td>Design</td>
-                        <td class="text-right">&euro; 92,144</td>
-                        <td class="td-actions text-right">
-                            <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                <i class="ti-user"></i>
-                            </a>
-                            <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
-                                <i class="ti-pencil-alt"></i>
-                            </a>
-                            <a href="#" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                <i class="ti-close"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">4</td>
-                        <td>Mike Monday</td>
-                        <td>Marketing</td>
-                        <td class="text-right">&euro; 49,990</td>
-                        <td class="td-actions text-right">
-                            <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                <i class="ti-user"></i>
-                            </a>
-                            <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
-                                <i class="ti-pencil-alt"></i>
-                            </a>
-                            <a href="#" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                <i class="ti-close"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="text-center">5</td>
-                        <td>Paul Dickens</td>
-                        <td>Communication</td>
-                        <td class="text-right">&euro; 69,201</td>
-                        <td class="td-actions text-right">
-                            <a href="#" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
-                                <i class="ti-user"></i>
-                            </a>
-                            <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
-                                <i class="ti-pencil-alt"></i>
-                            </a>
-                            <a href="#" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                <i class="ti-close"></i>
-                            </a>
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+<ul class="pagination">
+   {% if prev %}
+        <li><a href="{% url 'dashboard_product_list_page' page=prev %}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+   {% endif %}
+   {% for i in number %}
+        <li class="active"><a href="{% url 'dashboard_product_list_page' page=i %}">{{ i }}</a></li>
+   {% endfor %}
+   {% if next %}
+        <li><a href="{% url 'dashboard_product_list_page' page=next %}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+   {% endif %}
+</ul>
 {% endblock %}

@@ -5,6 +5,11 @@ from .views import *
 
 urlpatterns = [
     path('', home, name='home'),
-    path('ctg/list/', ctg_view.get_ctg, name='dashboard_ctg_list'),
-    path('ctg/detail/<int:pk>/', ctg_view.get_one, name='dashboard_ctg_detail')
+    path('ctg/list/', ctg_view.ctg_list, name='dashboard_ctg_list'),
+    path('ctg/list/<int:page>', ctg_view.ctg_list, name='dashboard_ctg_list_page'),
+    path('ctg/detail/<int:pk>/', ctg_view.ctg_one, name='dashboard_ctg_detail'),
+
+    path('product/list/', product_view.product_list, name='dashboard_product_list'),
+    path('product/list/<int:page>', product_view.product_list, name='dashboard_product_list_page'),
+    path('product/detail/<int:pk>/', product_view.product_one, name='dashboard_product_detail')
 ]

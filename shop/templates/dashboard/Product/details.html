@@ -1,44 +1,56 @@
+{% extends 'dashboard/index.html' %}
+
+{% block content %}
 <div class="col-md-12">
     <div class="card card-plain">
         <div class="card-header">
-            <h4 class="card-title">Table on Plain Background</h4>
+            <h4 class="card-title">Product Details</h4>
             <p class="category">Here is a subtitle for this table</p>
         </div>
         <div class="card-content table-responsive table-full-width">
             <table class="table table-hover">
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
+                        <td>Content</td>
+                        <td>{{ product.content }}</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
+                        <td>Category</td>
+                        <td>{{ product.ctg }}</td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
+                        <td>Real Price</td>
+                        <td>{{ product.real_price }}</td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
+                        <td>Discount Price</td>
+                        <td>{{ product.discount_price }}</td>
                     </tr>
                     <tr>
-                        <td>5</td>
-                        <td>Doris Greene</td>
+                        <td>Rate</td>
+                        <td>{{ product.rate }}</td>
                     </tr>
                     <tr>
-                        <td>6</td>
-                        <td>Mason Porter</td>
+                        <td>Short Info</td>
+                        <td>{{ product.short_info }}</td>
+                    </tr>
+                    <tr>
+                        <td>Color</td>
+                        <td>{{ product.color }}</td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td>{{ product.description }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<img src="http://127.0.0.1:8000/media/{{ product.image }}">
 
 
-
+{% endblock %}
 
 
 

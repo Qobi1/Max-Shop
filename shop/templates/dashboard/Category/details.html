@@ -1,44 +1,39 @@
+{% extends 'dashboard/index.html' %}
+
+{% block content %}
 <div class="col-md-12">
     <div class="card card-plain">
         <div class="card-header">
-            <h4 class="card-title">Table on Plain Background</h4>
+            <h4 class="card-title">Category detail</h4>
             <p class="category">Here is a subtitle for this table</p>
         </div>
         <div class="card-content table-responsive table-full-width">
             <table class="table table-hover">
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>Dakota Rice</td>
+                        <td>Name</td>
+                        <td>{{ ctg.content }}</td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>Minerva Hooper</td>
+                        <td>Price Symbol</td>
+                        <td>{{ ctg.price_symbol }}</td>
                     </tr>
                     <tr>
-                        <td>3</td>
-                        <td>Sage Rodriguez</td>
+                        <td>Real Price</td>
+                        <td>{{ ctg.real_price }}</td>
                     </tr>
                     <tr>
-                        <td>4</td>
-                        <td>Philip Chaney</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Doris Greene</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Mason Porter</td>
+                        <td>Discount Price</td>
+                        <td>{{ ctg.discount_price }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+<img src="http://127.0.0.1:8000/media/{{ ctg.image }}">
 
 
 
-
-
+{% endblock %}
 

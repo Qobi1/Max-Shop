@@ -5,14 +5,15 @@ from .forms import ProductForm
 from .services import *
 
 
-def ctg_list(requests, page=None):
+def product_list(requests, page=None):
     product = get_product(page)
+    meta = product['meta']
     if product and product['items']:
-        ctg = product['items']
+        product = product['items']
     else:
         return False
 
-    meta = product['meta']
+
     a = meta['count'] // meta['per_page']
 
     if meta['count'] % meta['per_page']:
@@ -34,17 +35,18 @@ def ctg_list(requests, page=None):
         'next': next,
         'prev': prev
     }
+    print(product)
     return render(requests, 'dashboard/Product/list.html', ctx)
 
 
-def ctg_one(requests, pk=None, delete=None):
+def product_one(requests, pk=None, delete=None):
     product = get_one(pk=pk, delete=delete)
     if delete:
         return redirect('dashboard_product_list')
     ctx = {
         'product': product
     }
-    return render(requests, 'dashboard/Product/detail.html', ctx)
+    return render(requests, 'dashboard/Product/details.html', ctx)
 
 
 def add_edit(requests, pk=None):

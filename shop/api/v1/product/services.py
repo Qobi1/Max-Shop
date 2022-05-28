@@ -40,7 +40,9 @@ def get_list(requests):
     else:
         extra_sql = ''
     page = requests.query_params.get('page', 1)
-    sql = f"""Select * from shop_app_product {extra_sql}
+    sql = f"""Select pp.*, ctg.content as ctg_content from shop_app_product pp
+            inner join shop_app_category ctg on ctg.id = pp.ctg_id
+             {extra_sql}
             order by id
             limit %s OFFSET %s
             """
@@ -52,7 +54,7 @@ def get_list(requests):
 
     with closing(connection.cursor()) as cursor:
 
-        cursor.execute(f'Select count(1) as cnt from shop_app_product {extra_sql}')
+        cursor.execute(f'''Select count(1) as cnt from shop_app_product {extra_sql}''')
         root = dictfetchone(cursor)
         if root:
             cnt = root['cnt']
@@ -68,8 +70,33 @@ def get_list(requests):
 
 
 def get_one(requests, pk=None):
-    sql = 'Select * from shop_app_product where id=%s'
+    sql = '''Select pp.*, ctg.content as ctg_content from shop_app_product pp
+            inner join shop_app_category ctg on ctg.id = pp.ctg_id 
+            where id=%s
+            '''
+
     with closing(connection.cursor()) as cursor:
         cursor.execute(sql, [pk])
         result = dictfetchone(cursor)
-    return result
+        if result:
+            response = _format(result)
+        else:
+            response = None
+
+    return response
+
+
+def _format(data):
+    return OrderedDict([
+        ('content', data['content']),
+        ('ctg', data['ctg_content']),
+        ('real_price', data['real_price']),
+        ('discount_price', data['discount_price']),
+        ('image', data['image']),
+        ('availibility', data['availibility']),
+        ('rate', data['rate']),
+        ('short_info', data['short_info']),
+        ('color', data['color']),
+        ('size', data['size']),
+        ('description', data['description']),
+    ])

@@ -6,7 +6,9 @@ from .services import *
 
 
 def ctg_list(requests, page=None):
+    print('page>>>>>>>>', page)
     ctgs = get_ctg(page)
+    print('>>>>>>>>>>>>>>>>>>>', ctgs)
     if ctgs and ctgs['items']:
         ctg = ctgs['items']
     else:
@@ -27,7 +29,7 @@ def ctg_list(requests, page=None):
         next = None
     if prev == 0:
         prev = None
-
+    print('>>>', ctg)
     ctx = {
         'ctgs': ctg,
         'number': number,
@@ -39,12 +41,13 @@ def ctg_list(requests, page=None):
 
 def ctg_one(requests, pk=None, delete=None):
     ctg = get_one(pk=pk, delete=delete)
+    print(ctg)
     if delete:
         return redirect('dashboard_ctg_list')
     ctx = {
         'ctg': ctg
     }
-    return render(requests, 'dashboard/Category/detail.html', ctx)
+    return render(requests, 'dashboard/Category/details.html', ctx)
 
 
 def add_edit(requests, pk=None):

@@ -6,9 +6,9 @@ def get_product(page):
     if not page:
         page = 1
     url = API_URL + f'product/?page={page}'
-    product = re.get(url).json()
+    product = re.get(url)
     if product.status_code == 200:
-        return product
+        return product.json()
     return False
 
 
