@@ -1,10 +1,10 @@
-{% extends 'dashboard/index' %}
+{% extends 'dashboard/index.html' %}
 {% block content %}
 <form method="post" enctype="multipart/form-data">
-    {% csrf token %}
+    {% csrf_token %}
     {{ form.as_p }}
     <a href="#"><button type="submit" class="btn">Save</button></a>
-    <a href="#"><button type="button" class="btn">Back</button></a>
+    <a href="{% url 'dashboard_ctg_list' %}"><button type="button" class="btn">Back</button></a>
 </form>
 
 {% endblock %}
