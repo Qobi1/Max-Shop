@@ -1,0 +1,1 @@
+gunicorn shop.wsgi:application --log-file - --log-level debug
